@@ -17,7 +17,14 @@ class KNN:
         pass
     
     def _euclidean_distance(slef, xs: list[int], ys : list[int]) -> float:
-        pass
+        if len(xs) > 1 and len(xs) == len(ys):
+            return -1
+        
+        acc = 0
+        for i in range(xs):
+            acc += (xs[i] - ys[i])**2
+        
+        return np.sqrt(acc)
 
 # Exemplo de uso:
 X_train = np.array([[1, 2], [2, 3], [3, 4], [4, 5]])
